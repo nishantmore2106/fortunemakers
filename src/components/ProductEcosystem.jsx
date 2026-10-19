@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Layers, Box, GraduationCap, Sparkles } from 'lucide-react';
+import { ArrowRight, Layers, Box, GraduationCap } from 'lucide-react';
 
 export default function ProductEcosystem({ onOpenConsultation }) {
   const pillars = [
@@ -40,7 +40,7 @@ export default function ProductEcosystem({ onOpenConsultation }) {
     >
       <div className="container" style={{ maxWidth: '1240px' }}>
 
-        {/* 3D Floating Product Ecosystem Visual (Top-Center) */}
+        {/* 3D Floating Product Ecosystem Visual (Top-Center) — Clean with no columns */}
         <div
           style={{
             position: 'relative',
@@ -78,7 +78,7 @@ export default function ProductEcosystem({ onOpenConsultation }) {
           >
             <img
               src="/assets/product-ecosystem.jpg"
-              alt="Floating 3D physical commerce objects and translucent tiles arranged in a graceful horizontal arc"
+              alt="Floating 3D physical commerce objects arranged in a graceful horizontal arc with clean surfaces and no columns"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -91,7 +91,7 @@ export default function ProductEcosystem({ onOpenConsultation }) {
             />
           </div>
 
-          {/* Interactive Floating Micro-labels */}
+          {/* Floating Micro-labels */}
           <div
             style={{
               display: 'flex',
@@ -168,7 +168,7 @@ export default function ProductEcosystem({ onOpenConsultation }) {
           </div>
         </div>
 
-        {/* Three Pillar Cards */}
+        {/* Three Pillar Cards with Obsidian Texture Background */}
         <div
           style={{
             display: 'grid',
@@ -183,86 +183,136 @@ export default function ProductEcosystem({ onOpenConsultation }) {
               <a
                 key={pillar.num}
                 href={pillar.href}
+                className="pillar-card obsidian-card"
                 style={{
                   textDecoration: 'none',
-                  backgroundColor: 'var(--color-pure-white)',
-                  padding: '2.4rem 2rem',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(23, 25, 30, 0.06)',
-                  boxShadow: '0 8px 30px rgba(16, 28, 53, 0.03)',
+                  position: 'relative',
+                  borderRadius: '18px',
+                  overflow: 'hidden',
+                  backgroundColor: '#07080B',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  boxShadow: '0 16px 45px rgba(0, 0, 0, 0.25)',
                   transition: 'var(--transition-standard)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  position: 'relative'
+                  minHeight: '320px'
                 }}
-                className="pillar-card"
               >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.75rem' }}>
-                    <span
-                      style={{
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '0.8rem',
-                        fontWeight: 700,
-                        color: 'var(--color-ocean-blue)',
-                        letterSpacing: '0.08em'
-                      }}
-                    >
-                      {pillar.num}
-                    </span>
-                    <div
-                      style={{
-                        width: '38px',
-                        height: '38px',
-                        borderRadius: '50%',
-                        backgroundColor: 'var(--color-soft-lavender)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'var(--color-midnight-navy)'
-                      }}
-                    >
-                      <IconComponent size={18} />
-                    </div>
-                  </div>
+                {/* Obsidian Texture Background Layer */}
+                <div
+                  className="obsidian-texture-layer"
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundImage: "url('/assets/obsidian-texture.jpg')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    opacity: 0.38,
+                    pointerEvents: 'none',
+                    zIndex: 0,
+                    transition: 'opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                />
 
-                  <h3
-                    style={{
-                      fontSize: '1.25rem',
-                      fontWeight: 600,
-                      color: 'var(--color-primary-text)',
-                      marginBottom: '0.75rem',
-                      letterSpacing: '-0.015em'
-                    }}
-                  >
-                    {pillar.title}
-                  </h3>
-
-                  <p
-                    style={{
-                      fontSize: '0.92rem',
-                      color: 'var(--color-secondary-text)',
-                      lineHeight: 1.6
-                    }}
-                  >
-                    {pillar.desc}
-                  </p>
-                </div>
-
+                {/* Subtle Gradient Overlay for Text Readability & Depth */}
                 <div
                   style={{
-                    marginTop: '2rem',
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, rgba(7, 8, 11, 0.62) 0%, rgba(9, 10, 14, 0.88) 100%)',
+                    pointerEvents: 'none',
+                    zIndex: 1
+                  }}
+                />
+
+                {/* Card Content Layer */}
+                <div
+                  style={{
+                    position: 'relative',
+                    zIndex: 2,
+                    padding: '2.4rem 2rem',
                     display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.4rem',
-                    fontSize: '0.84rem',
-                    fontWeight: 600,
-                    color: 'var(--color-ocean-blue)'
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    height: '100%'
                   }}
                 >
-                  <span>Explore Focus Area</span>
-                  <ArrowRight size={14} className="pillar-arrow" style={{ transition: 'transform 0.25s ease' }} />
+                  <div>
+                    {/* Top Badge & Icon */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.75rem' }}>
+                      <span
+                        style={{
+                          fontFamily: 'var(--font-sans)',
+                          fontSize: '0.82rem',
+                          fontWeight: 700,
+                          color: 'var(--color-sky-blue)',
+                          letterSpacing: '0.12em',
+                          textTransform: 'uppercase'
+                        }}
+                      >
+                        {pillar.num} // FOCUS
+                      </span>
+
+                      <div
+                        style={{
+                          width: '40px',
+                          height: '40px',
+                          borderRadius: '50%',
+                          backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                          border: '1px solid rgba(255, 255, 255, 0.16)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'var(--color-sky-blue)',
+                          backdropFilter: 'blur(8px)',
+                          WebkitBackdropFilter: 'blur(8px)'
+                        }}
+                      >
+                        <IconComponent size={18} />
+                      </div>
+                    </div>
+
+                    <h3
+                      style={{
+                        fontSize: '1.35rem',
+                        fontWeight: 600,
+                        color: 'var(--color-pure-white)',
+                        marginBottom: '0.85rem',
+                        letterSpacing: '-0.02em',
+                        lineHeight: 1.25
+                      }}
+                    >
+                      {pillar.title}
+                    </h3>
+
+                    <p
+                      style={{
+                        fontSize: '0.92rem',
+                        color: 'rgba(220, 239, 248, 0.8)',
+                        lineHeight: 1.62
+                      }}
+                    >
+                      {pillar.desc}
+                    </p>
+                  </div>
+
+                  {/* Bottom Action Indicator */}
+                  <div
+                    style={{
+                      marginTop: '2.25rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.45rem',
+                      fontSize: '0.86rem',
+                      fontWeight: 600,
+                      color: 'var(--color-sky-blue)'
+                    }}
+                  >
+                    <span>Explore Focus Area</span>
+                    <ArrowRight size={15} className="pillar-arrow" style={{ transition: 'transform 0.25s ease' }} />
+                  </div>
                 </div>
               </a>
             );
@@ -272,13 +322,17 @@ export default function ProductEcosystem({ onOpenConsultation }) {
       </div>
 
       <style>{`
-        .pillar-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 16px 40px rgba(16, 28, 53, 0.08);
-          border-color: rgba(22, 125, 181, 0.25);
+        .obsidian-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(119, 199, 234, 0.45) !important;
+          box-shadow: 0 24px 55px rgba(0, 0, 0, 0.45), 0 0 25px rgba(119, 199, 234, 0.18) !important;
         }
-        .pillar-card:hover .pillar-arrow {
-          transform: translateX(4px);
+        .obsidian-card:hover .obsidian-texture-layer {
+          opacity: 0.58 !important;
+          transform: scale(1.04);
+        }
+        .obsidian-card:hover .pillar-arrow {
+          transform: translateX(5px);
         }
       `}</style>
     </section>
